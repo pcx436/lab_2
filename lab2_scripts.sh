@@ -3,28 +3,30 @@
 # Date: 1/30/2019
 
 #Problem 1 Code:
-#Make sure to document how you are solving each problem!
-
-
 echo -n "Enter a regular expression: "
 read reg
 
 echo -n "Enter a file name: "
 read fN
 
-grep $reg $fN 2>/dev/null
+#Problem 2 Code:
+grep $reg $fN 2>/dev/null # added the "2>/dev/null" because I didn't want to keep typing an expression
 
-phoneLines=$(grep -Pc "([0-9]{3}-){2}[0-9]{4}" regex_practice.txt)
-echo $phoneLines
+# Problem 3.1
+echo grep -Pc "([0-9]{3}-){2}[0-9]{4}" regex_practice.txt
 
-emailLines=$(grep -Pc "^.+@.+\..+$" regex_practice.txt)
-echo $emailLines
 
+# problem 3.2
+echo grep -Pc "^.+@.+\..+$" regex_practice.txt
+
+# problem 3.3
 grep -P "^303-[0-9]{3}-[0-9]{4}$" regex_practice.txt | less
 grep -P "^303-[0-9]{3}-[0-9]{4}$" regex_practice.txt > phone_results.txt
 
+# problem 3.4
 grep -P "^.+@geocities\.com$" regex_practice.txt | less
 grep -P "^.+@geocities\.com$" regex_practice.txt > email_results.txt
 
+# problem 3.5
 grep -P $1 regex_practice.txt | less
 grep -P $1 regex_practice.txt > command_results.txt
