@@ -13,11 +13,15 @@ read fN
 grep $reg $fN 2>/dev/null # added the "2>/dev/null" because I didn't want to keep typing an expression
 
 # Problem 3.1
-echo grep -Pc "([0-9]{3}-){2}[0-9]{4}" regex_practice.txt
+grep -Pc "([0-9]{3}-){2}[0-9]{4}" regex_practice.txt
+echo "Press enter to continue..."
+read # pause so you can see the results
 
 
 # problem 3.2
-echo grep -Pc "^.+@.+\..+$" regex_practice.txt
+grep -Pc "^.+@.+\..+$" regex_practice.txt
+echo "Press enter to continue..."
+read # pause so you can see the results
 
 # problem 3.3
 grep -P "^303-[0-9]{3}-[0-9]{4}$" regex_practice.txt | less
